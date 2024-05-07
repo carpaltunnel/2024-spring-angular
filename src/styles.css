@@ -1,0 +1,59 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #1a1a1a;
+  color: #6666ff;
+}
+
+h1 {
+  color: #b30000;
+  font-size: 2rem;
+}
+
+div#content {
+  font-size: 1rem;
+}
+
+div#content p {
+  text-align: center;
+}
+
+span {
+  font-size: 125%;
+}
+
+span.green-bold {
+  color: green;
+  font-weight: bold;
+}
+
+div#content p span {
+  text-decoration: underline;
+}
+
+#center-stuff {
+  text-align: center;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+div.picture-frame {
+  background-color: #444444;
+  color: #d0d0d0;
+  margin: .5em;
+  padding: 1em;
+  text-align: center;
+  border-style: double;
+  border-width: 0.4em;
+  border-color: #9b9b9b;
+  border-radius: 1em;
+}
+
+div#lower-puppy {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 825px;
+  height: 48em;
+}
