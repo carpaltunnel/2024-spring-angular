@@ -12,12 +12,11 @@ import { WIDGETS } from '../mock-widgets';
   styleUrl: './widgets.component.css'
 })
 export class WidgetsComponent {
-  widget: Widget = {
-    id: '3f94541b-2ac1-4497-be1c-b3b86facc9d3',
-    name: 'Widget #1',
-    color: 'blue',
-    weight: 10,
-  };
+  selectedWidget: Widget = {} as Widget;
 
   widgets = WIDGETS;
+
+  select = (widget: Widget): void => {
+    this.selectedWidget = widget;
+  }
 }
