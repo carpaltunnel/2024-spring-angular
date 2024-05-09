@@ -1,12 +1,27 @@
 <div>
-  Name : <span>{{ widget.name }}</span>
-</div>
-<div>
   ID : <span>{{ widget.id }}</span>
 </div>
 <div>
-  Color : <span>{{ widget.color }}</span>
+  <label for="name">Name : </label>
+  <input [(ngModel)]="widget.name" id="name" placeholder="name">
+</div>
+
+<div>
+  <label for="color">Color : </label>
+  <input [(ngModel)]="widget.color" id="color" placeholder="color">
 </div>
 <div>
-  Weight : <span>{{ widget.weight }}</span>
+  <label for="weight">Weight : </label>
+  <input [(ngModel)]="widget.weight" value="{{widget.weight}}" id="naweightme" placeholder="weight">
+</div>
+
+<br><br><br>
+
+<div class="container">
+  <h2>List of Widgets : </h2>
+  <ul>
+    <li *ngFor="let widget of widgets">
+      <span>{{ widget.name }}</span> ( <span style="color: {{ widget.color }}">{{ widget.color }}</span> )
+    </li>
+  </ul>
 </div>
