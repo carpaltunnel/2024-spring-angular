@@ -1,4 +1,9 @@
 .widgets {
   padding: 0;
   list-style-type: none;
+  width: 15em;
+}
+
+.selected {
+  background-color: rgb(63, 0, 0);
 }
