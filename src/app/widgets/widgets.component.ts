@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { Widget } from '../widget';
-import { NgFor, NgIf, UpperCasePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { NgFor, NgIf, UpperCasePipe } from '@angular/common';
+import { MessageService } from '../message.service';
+import { Widget } from '../widget';
 import { WidgetDetailComponent } from '../widget-detail/widget-detail.component';
 import { WidgetService } from '../widget.service';
 
@@ -16,7 +17,7 @@ export class WidgetsComponent {
   selectedWidget!: Widget;
   widgets: Widget[] = [];
 
-  constructor(private widgetService: WidgetService) {}
+  constructor(private widgetService: WidgetService, private messageService: MessageService) {}
 
   getWidgets = (): void => {
     console.log('Invoked getWidgets()');
@@ -26,6 +27,7 @@ export class WidgetsComponent {
   };
 
   select = (widget: Widget): void => {
+    this.messageService.add(`Selected Widget ID : ${widget.id}`);
     this.selectedWidget = widget;
   };
 
