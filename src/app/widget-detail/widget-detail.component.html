@@ -1,0 +1,18 @@
+<div *ngIf="widget" class="container">
+  <div>
+    ID : <span>{{ widget.id }}</span>
+  </div>
+  <div>
+    <label for="name">Name : </label>
+    <input [(ngModel)]="widget.name" id="name" placeholder="name">
+  </div>
+
+  <div>
+    <label for="color">Color : </label>
+    <input [(ngModel)]="widget.color" id="color" placeholder="color">
+  </div>
+  <div>
+    <label for="weight">Weight : </label>
+    <input [(ngModel)]="widget.weight" id="weight" placeholder="weight">
+  </div>
+</div>

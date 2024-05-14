@@ -1,23 +1,5 @@
-<div *ngIf="selectedWidget" class="container">
-  <div>
-    ID : <span>{{ selectedWidget.id }}</span>
-  </div>
-  <div>
-    <label for="name">Name : </label>
-    <input [(ngModel)]="selectedWidget.name" id="name" placeholder="name">
-  </div>
 
-  <div>
-    <label for="color">Color : </label>
-    <input [(ngModel)]="selectedWidget.color" id="color" placeholder="color">
-  </div>
-  <div>
-    <label for="weight">Weight : </label>
-    <input [(ngModel)]="selectedWidget.weight" id="weight" placeholder="weight">
-  </div>
-</div>
 
-<br><br><br>
 
 <div class="container">
   <h2>List of Widgets : </h2>
@@ -27,3 +9,5 @@
     </li>
   </ul>
 </div>
+
+<app-widget-detail [widget]="selectedWidget"></app-widget-detail>

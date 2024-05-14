@@ -6,4 +6,6 @@
 
 .selected {
   background-color: rgb(63, 0, 0);
+  border-radius: 4px;
+  margin-left: 2em;
 }
