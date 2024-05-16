@@ -18,19 +18,29 @@ export class WidgetService {
 
   getWidgets = (): Observable<Widget[]> => {
     this.messageService.add('About to fetch data from API');
-    
     return this.http.get<Widget[]>(this.widgetsUrl);
   }
 
   getWidget = (id: string): Observable<Widget> => {
-    const widget = WIDGETS.find(widget => widget.id === id);
-
     this.messageService.add(`Fetched data for ID ${id} from API`);
 
-    if (widget) {
-      return of(widget);
-    }
+    return this.http.get<Widget>(`${this.widgetsUrl}/${id}`);
+  }
 
-    return of({} as Widget);
+  deleteWidget = (id: string): Observable<boolean> => {
+    //TODO: Finish
+    this.http.delete(`${this.widgetsUrl}/${id}`);
+
+    return of(true);
+  }
+
+  updateWidget = (id: string, widget: Widget): Observable<Widget> => {
+    //TODO: Finish
+    return this.http.put<Widget>(`${this.widgetsUrl}/${id}`, widget);
+  }
+
+  createWidget = (widget: Widget): Observable<Widget> => {
+    //TODO: Finish
+    return this.http.post<Widget>(`${this.widgetsUrl}`, widget)
   }
 }
