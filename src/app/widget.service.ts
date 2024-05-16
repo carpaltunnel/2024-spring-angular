@@ -3,18 +3,23 @@ import { Widget } from './widget';
 import { WIDGETS } from './mock-widgets';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WidgetService {
-  constructor(private messageService: MessageService) { }
+  private widgetsUrl = 'http://localhost:3000/api/v1/widgets';
+
+  constructor(
+    private messageService: MessageService,
+    private http: HttpClient,
+    ) { }
 
   getWidgets = (): Observable<Widget[]> => {
     this.messageService.add('About to fetch data from API');
-    const widgets = of(WIDGETS);
-    this.messageService.add('Done fetching data from API');
-    return widgets;
+    
+    return this.http.get<Widget[]>(this.widgetsUrl);
   }
 
   getWidget = (id: string): Observable<Widget> => {
