@@ -9,7 +9,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class WidgetService {
-  private widgetsUrl = 'http://localhost:3000/api/v1/widgets';
+  private widgetsUrl = '/api/v1/widgets';
 
   constructor(
     private messageService: MessageService,
