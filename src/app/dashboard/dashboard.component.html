@@ -1,0 +1,6 @@
+<h2>Widgets Ranked by Weight (descending)</h2>
+<div class="container">
+  <button *ngFor="let widget of widgets" routerLink="/widgets/{{widget.id}}" type="button" class="btn btn-light dash-btn">
+    {{ widget.name }}
+  </button>
+</div>

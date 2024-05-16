@@ -1,8 +1,9 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component } from '@angular/core';
-import { Input } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { Widget } from '../widget';
 import { FormsModule } from '@angular/forms';
+import { WidgetService } from '../widget.service';
 
 @Component({
   selector: 'app-widget-detail',
@@ -12,5 +13,25 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './widget-detail.component.css'
 })
 export class WidgetDetailComponent {
-  @Input() widget?: Widget;
+  widget?: Widget;
+
+  constructor(
+    private route: ActivatedRoute,
+    private widgetService: WidgetService
+  ) {}
+
+  getWidget = (): void => {
+    const widgetId = this.route.snapshot.paramMap.get('id');
+
+    if (widgetId) {
+      this.widgetService.getWidget(widgetId)
+        .subscribe((widget: Widget) => {
+          this.widget = widget;
+        });
+    }
+  }
+
+  ngOnInit(): void {
+    this.getWidget();
+  }
 }

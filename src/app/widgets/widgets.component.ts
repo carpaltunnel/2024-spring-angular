@@ -5,11 +5,12 @@ import { MessageService } from '../message.service';
 import { Widget } from '../widget';
 import { WidgetDetailComponent } from '../widget-detail/widget-detail.component';
 import { WidgetService } from '../widget.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-widgets',
   standalone: true,
-  imports: [UpperCasePipe, FormsModule, NgFor, NgIf, WidgetDetailComponent],  
+  imports: [UpperCasePipe, FormsModule, NgFor, NgIf, WidgetDetailComponent, RouterLink],  
   templateUrl: './widgets.component.html',
   styleUrl: './widgets.component.css'
 })

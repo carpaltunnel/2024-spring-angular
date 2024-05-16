@@ -5,7 +5,9 @@
   <h2>List of Widgets : </h2>
   <ul class="widgets">
     <li *ngFor="let widget of widgets" (click)="select(widget)" [class.selected]="selectedWidget === widget">
-      <span>{{ widget.name }}</span> ( <span style="color: {{ widget.color }}">{{ widget.color }}</span> )
+      <a routerLink="/widgets/{{widget.id}}">
+        <span>{{ widget.name }}</span> ( <span style="color: {{ widget.color }}">{{ widget.color }}</span> )
+      </a>
     </li>
   </ul>
 </div>
