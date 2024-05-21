@@ -4,18 +4,18 @@
   </div>
   <div>
     <label for="name">Name : </label>
-    <input [(ngModel)]="widget.name" id="name" placeholder="name">
+    <input [(ngModel)]="widget.name" class="form-control w-25" id="name" placeholder="name">
   </div>
 
   <div>
     <label for="color">Color : </label>
-    <input [(ngModel)]="widget.color" id="color" placeholder="color">
+    <input [(ngModel)]="widget.color" class="form-control w-25" id="color" placeholder="color">
   </div>
   <div>
     <label for="weight">Weight : </label>
-    <input [(ngModel)]="widget.weight" id="weight" type="number" placeholder="weight">
+    <input [(ngModel)]="widget.weight" class="form-control w-25" id="weight" type="number" placeholder="weight">
   </div>
   <div>
-    <button type="button" (click)="updateWidget()">Update</button>
+    <button type="button" class="btn btn-success" (click)="updateWidget()">Update</button>
   </div>
 </div>

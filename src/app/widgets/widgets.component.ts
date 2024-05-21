@@ -15,15 +15,41 @@ import { RouterLink } from '@angular/router';
   styleUrl: './widgets.component.css'
 })
 export class WidgetsComponent {
-  selectedWidget!: Widget;
   widgets: Widget[] = [];
+
+  currentPageWidgets: Widget[] = [];
+  currentPage = 0;
+  pageSize = 5;
+  pageCount = 0;
 
   constructor(private widgetService: WidgetService, private messageService: MessageService) {}
 
   getWidgets = (): void => {
     this.widgetService.getWidgets().subscribe((widgets) => {
       this.widgets = widgets;
+      this.pageCount = Math.ceil(this.widgets.length / this.pageSize);
+      this.currentPageWidgets = this.widgets.slice(0, this.pageSize);
+      console.log(`Page count = ${this.pageCount}`);
     });
+  };
+
+  previousPage = (): void => {
+    if (this.currentPage - 1 < 0) {
+      return;
+    }
+    this.currentPage -= 1;
+    const startIndex = this.currentPage * this.pageSize;
+    this.currentPageWidgets = this.widgets.slice(startIndex, startIndex + this.pageSize);
+  };
+
+  nextPage = (): void => {
+    if (this.currentPage + 1 >= this.pageCount) {
+      return;
+    }
+    this.currentPage += 1;
+    const startIndex = this.currentPage * this.pageSize;
+    this.currentPageWidgets = this.widgets.slice(startIndex, startIndex + this.pageSize);
+    console.log('test');
   };
 
   deleteWidget = (id: string): void => {

@@ -4,12 +4,14 @@
 <div class="container">
   <h2>List of Widgets : </h2>
   <ul class="widgets">
-    <li *ngFor="let widget of widgets">
+    <li *ngFor="let widget of currentPageWidgets">
       <button type="button" (click)="deleteWidget(widget.id)">X</button>
       <a routerLink="/widgets/{{widget.id}}">
         <span>{{ widget.name }}</span> ( <span style="color: {{ widget.color }}">{{ widget.color }}</span> )
       </a>
     </li>
   </ul>
+  <button type="button" (click)="previousPage()" class="btn btn-light">&lt;-- Prev</button>
+  <button type="button" (click)="nextPage()" class="btn btn-light">Next --&gt;</button>
 </div>
 
