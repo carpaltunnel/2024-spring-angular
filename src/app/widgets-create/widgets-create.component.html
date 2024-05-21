@@ -1,0 +1,18 @@
+<div class="container">
+  <div>
+    <label for="name">Name : </label>
+    <input [(ngModel)]="widget.name" id="name" placeholder="name">
+  </div>
+
+  <div>
+    <label for="color">Color : </label>
+    <input [(ngModel)]="widget.color" id="color" placeholder="color">
+  </div>
+  <div>
+    <label for="weight">Weight : </label>
+    <input [(ngModel)]="widget.weight" id="weight" type="number" placeholder="weight">
+  </div>
+  <div>
+    <button type="button" (click)="createWidget()">Create</button>
+  </div>
+</div>

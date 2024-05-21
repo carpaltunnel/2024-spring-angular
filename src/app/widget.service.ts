@@ -27,7 +27,6 @@ export class WidgetService {
   }
 
   deleteWidget = (id: string): Observable<Object> => {
-    console.log('---- Service.deleteWidget()');
     return this.http.delete(`${this.widgetsUrl}/${id}`);
   }
 
@@ -36,7 +35,6 @@ export class WidgetService {
   }
 
   createWidget = (widget: Widget): Observable<Widget> => {
-    //TODO: Finish
     return this.http.post<Widget>(`${this.widgetsUrl}`, widget)
   }
 }
