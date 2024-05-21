@@ -1,4 +1,9 @@
 <div class="container">
+  <div *ngIf="error">
+    <a class="list-group-item list-group-item-action list-group-item-danger">
+      {{ error }}
+    </a>
+  </div>
   <div>
     <label for="name">Name : </label>
     <input [(ngModel)]="widget.name" id="name" placeholder="name">
