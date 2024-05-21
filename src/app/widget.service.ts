@@ -23,19 +23,15 @@ export class WidgetService {
 
   getWidget = (id: string): Observable<Widget> => {
     this.messageService.add(`Fetched data for ID ${id} from API`);
-
     return this.http.get<Widget>(`${this.widgetsUrl}/${id}`);
   }
 
-  deleteWidget = (id: string): Observable<boolean> => {
-    //TODO: Finish
-    this.http.delete(`${this.widgetsUrl}/${id}`);
-
-    return of(true);
+  deleteWidget = (id: string): Observable<Object> => {
+    console.log('---- Service.deleteWidget()');
+    return this.http.delete(`${this.widgetsUrl}/${id}`);
   }
 
   updateWidget = (id: string, widget: Widget): Observable<Widget> => {
-    //TODO: Finish
     return this.http.put<Widget>(`${this.widgetsUrl}/${id}`, widget);
   }
 

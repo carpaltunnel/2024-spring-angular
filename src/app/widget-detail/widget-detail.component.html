@@ -13,6 +13,9 @@
   </div>
   <div>
     <label for="weight">Weight : </label>
-    <input [(ngModel)]="widget.weight" id="weight" placeholder="weight">
+    <input [(ngModel)]="widget.weight" id="weight" type="number" placeholder="weight">
+  </div>
+  <div>
+    <button type="button" (click)="updateWidget()">Update</button>
   </div>
 </div>

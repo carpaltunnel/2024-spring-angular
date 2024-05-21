@@ -31,6 +31,18 @@ export class WidgetDetailComponent {
     }
   }
 
+  updateWidget = (): void => {
+    const widgetId = this.route.snapshot.paramMap.get('id');
+
+    if (widgetId && this.widget) {
+      this.widgetService.updateWidget(widgetId, this.widget)
+        .subscribe((widget: Widget) => {
+          this.widget = widget;
+        });
+    }
+    
+  }
+
   ngOnInit(): void {
     this.getWidget();
   }

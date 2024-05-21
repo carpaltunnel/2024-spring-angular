@@ -21,16 +21,16 @@ export class WidgetsComponent {
   constructor(private widgetService: WidgetService, private messageService: MessageService) {}
 
   getWidgets = (): void => {
-    console.log('Invoked getWidgets()');
     this.widgetService.getWidgets().subscribe((widgets) => {
       this.widgets = widgets;
     });
   };
 
-  select = (widget: Widget): void => {
-    this.messageService.add(`Selected Widget ID : ${widget.id}`);
-    this.selectedWidget = widget;
-  };
+  deleteWidget = (id: string): void => {
+    this.widgetService.deleteWidget(id).subscribe((res) => {
+      this.getWidgets();
+    });
+  }
 
   ngOnInit(): void {
     console.log('Invoked ngOnInit');
