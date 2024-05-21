@@ -29,7 +29,6 @@ export class WidgetsComponent {
       this.widgets = widgets;
       this.pageCount = Math.ceil(this.widgets.length / this.pageSize);
       this.currentPageWidgets = this.widgets.slice(0, this.pageSize);
-      console.log(`Page count = ${this.pageCount}`);
     });
   };
 
