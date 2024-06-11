@@ -1,0 +1,15 @@
+<div class="container">
+  <div>
+    <label for="username">Username : </label>
+    <input [(ngModel)]="username" class="form-control w-25" id="username" placeholder="username">
+  </div>
+
+  <div>
+    <label for="password">Password : </label>
+    <input [(ngModel)]="password" type="password" class="form-control w-25" id="password" placeholder="password">
+  </div>
+
+  <div>
+    <button type="button" class="btn btn-success" (click)="doLogin()">Login</button>
+  </div>
+</div>

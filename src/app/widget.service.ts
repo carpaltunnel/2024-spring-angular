@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Widget } from './widget';
-import { WIDGETS } from './mock-widgets';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
