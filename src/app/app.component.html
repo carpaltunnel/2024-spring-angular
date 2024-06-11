@@ -8,8 +8,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav me-auto mb-2 mb-md-0">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/login">Login</a>
+        <li *ngIf="!authService.getToken()" class="nav-item">
+          <a class="nav-link" (click)="logout()">Login</a>
+        </li>
+        <li *ngIf="authService.getToken()" class="nav-item">
+          <a class="nav-link" (click)="logout()">Logout</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
@@ -20,7 +23,7 @@
         <li class="nav-item" routerLink="/widgets">
           <a class="nav-link">Widgets</a>
         </li>
-        <li class="nav-item" routerLink="/widgets-create">
+        <li *ngIf="authService.hasRole('readWrite')" class="nav-item" routerLink="/widgets-create">
           <a class="nav-link">Create</a>
         </li>
         <!--li class="nav-item">
